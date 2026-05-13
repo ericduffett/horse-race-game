@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Horse Race</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="table">
+    <header class="topbar">
+      <h1>Horse Race</h1>
+      <div class="controls">
+        <div class="race-type" role="tablist" aria-label="Race type">
+          <button class="seg active" data-race="savings" role="tab" aria-selected="true">Savings</button>
+          <button class="seg" data-race="loans" role="tab" aria-selected="false">Student Loans</button>
+          <button class="seg" data-race="furniture" role="tab" aria-selected="false">Furniture</button>
+        </div>
+        <button id="resetBtn" class="reset-btn" title="Reset race">Reset</button>
+      </div>
+    </header>
+
+    <main class="track" id="track">
+      <!-- Lanes injected by JS -->
+    </main>
+
+    <footer class="dock">
+      <div class="deck-area">
+        <div class="deck" id="deck" aria-label="Deck of cards">
+          <div class="deck-back"></div>
+          <div class="deck-count" id="deckCount">52</div>
+        </div>
+        <div class="drawn-slot">
+          <div class="drawn-label">Drawn</div>
+          <div class="drawn-card" id="drawnCard">
+            <div class="drawn-empty">—</div>
+          </div>
+        </div>
+      </div>
+
+      <button id="drawBtn" class="draw-btn">Draw Card</button>
+    </footer>
+  </div>
+
+  <div class="results-overlay" id="resultsOverlay" aria-hidden="true">
+    <div class="results-modal">
+      <h2 class="results-title">Race Complete</h2>
+      <p class="results-sub" id="resultsSub">Savings Race Payouts</p>
+      <div class="results-grid" id="resultsGrid"></div>
+      <button id="resultsReset" class="reset-btn large">Race Again</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
