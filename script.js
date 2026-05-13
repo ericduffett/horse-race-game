@@ -215,14 +215,23 @@ function advance(suit) {
   }
 
   animating = true;
+  drawBtn.disabled = true;
   positions[suit] = next;
   horse.style.left = leftForPosition(next);
 
+  // Guards against this advance's onDone running twice
+  // (transitionend + the stale fallback during a later move).
+  let settled = false;
+  let fallback;
+
   const onDone = () => {
+    if (settled) return;
+    settled = true;
+    clearTimeout(fallback);
     horse.removeEventListener("transitionend", onDone);
     animating = false;
 
-    if (willFinish) {
+    if (willFinish && !finished[suit]) {
       // Mark finished, remove remaining suit cards from deck (mirror Swift)
       deck = deck.filter(c => !c.endsWith(suit));
       updateDeckCount();
@@ -240,18 +249,18 @@ function advance(suit) {
 
       // Race over?
       if (Object.keys(finished).length === 4) {
-        drawBtn.disabled = true;
         drawBtn.textContent = "Race Complete";
         setTimeout(showResults, 600);
+        return; // leave button disabled
       }
     }
+
+    drawBtn.disabled = deck.length === 0;
   };
 
   horse.addEventListener("transitionend", onDone);
-  // Fallback in case transitionend doesn't fire (e.g., no movement)
-  setTimeout(() => {
-    if (animating) onDone();
-  }, 1100);
+  // Fallback in case transitionend doesn't fire (e.g., no movement).
+  fallback = setTimeout(onDone, 1100);
 }
 
 // ───── Results ─────
