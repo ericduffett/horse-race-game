@@ -199,7 +199,7 @@ html, body {
 
 .space {
   position: relative;
-  aspect-ratio: 7 / 5;
+  aspect-ratio: 1056 / 691;
   border-radius: 10px;
   background:
     linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
@@ -236,7 +236,7 @@ html, body {
   top: 0;
   left: 0;
   width: calc((100% - (5 * 8px)) / 6);
-  aspect-ratio: 7 / 5;
+  aspect-ratio: 1056 / 691;
   border-radius: 10px;
   background: #fff;
   box-shadow: 0 6px 16px rgba(0,0,0,0.6), 0 0 0 2px rgba(0,0,0,0.4);
@@ -249,8 +249,8 @@ html, body {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: calc(100% * 5 / 7);
-  height: calc(100% * 7 / 5);
+  width: calc(100% * 691 / 1056);
+  height: calc(100% * 1056 / 691);
   object-fit: contain;
   background: #fff;
   display: block;
