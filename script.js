@@ -35,10 +35,10 @@ const PRIZES = {
   },
   car: {
     label: "Starting Car Race",
-    1: "2010 Toyota Corolla LE sedan\n170,000 miles\nFair condition\n29 MPG",
-    2: "2013 Jeep Grand Cherokee Laredo 4WD\n145,000 miles\nGood condition\n19 MPG",
-    3: "2016 Honda Civic LX sedan\n105,000 miles\nGood condition\n34 MPG",
-    4: "2019 Chevrolet Equinox LT AWD\n85,000 miles\nGood condition\n26 MPG",
+    1: "2019 Chevrolet Equinox LT AWD\n85,000 miles\nGood condition\n26 MPG",
+    2: "2016 Honda Civic LX sedan\n105,000 miles\nGood condition\n34 MPG",
+    3: "2013 Jeep Grand Cherokee Laredo 4WD\n145,000 miles\nGood condition\n19 MPG",
+    4: "2010 Toyota Corolla LE sedan\n170,000 miles\nFair condition\n29 MPG",
   },
 };
 
